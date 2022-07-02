@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-xl-4 offset-xl-1 col-lg-5 product-main-details mt-md--50">
                             <div class="product-summary pl-lg--30 pl-md--0">
-                                <h3 class="product-title mb--20"><?= $data['nama_produk'] ?></h3>
+                                <h3 class="product-title mb--20"><?= $data['nama_jasa'] ?></h3>
                                 <p class="product-short-description mb--20"><?= $data['deskripsi'] ?></p>
                             </div>
                         </div>
@@ -66,14 +66,14 @@
                             <div class="tab-style-2">
                                 <div class="nav nav-tabs mb--35 mb-sm--25" id="product-tab" role="tablist">
                                     <button type="button" class="nav-link" id="nav-reviews-tab" data-bs-toggle="tab" data-bs-target="#nav-reviews" role="tab" aria-selected="true">
-                                        <span>Reviews(<?= count(get_feedback_by_product($data['id_produk'])) ?>)</span>
+                                        <span>Reviews(<?= count(get_feedback_by_product($data['id_jasa'])) ?>)</span>
                                     </button>
                                 </div>
                                 <div class="tab-content" id="product-tabContent">
                                     <div class="tab-pane fade show active" id="nav-reviews" role="tabpanel" aria-labelledby="nav-reviews-tab">
                                         <div class="product-reviews">
-                                            <h3 class="review__title"><?= count(get_feedback_by_product($data['id_produk'])) ?> ulasan untuk <?= $data['nama_produk'] ?></h3>
-                                            <?php foreach (get_feedback_by_product($data['id_produk']) as $key => $value) { ?>
+                                            <h3 class="review__title"><?= count(get_feedback_by_product($data['id_jasa'])) ?> ulasan untuk <?= $data['nama_produk'] ?></h3>
+                                            <?php foreach (get_feedback_by_product($data['id_jasa']) as $key => $value) { ?>
                                             <?php
                                                 $star = "";
                                                 if($value->bintang == 5){
