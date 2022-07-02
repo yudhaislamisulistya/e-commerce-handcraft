@@ -60,6 +60,7 @@ $routes->post('/add-feedback', 'FeedbackController::add_feedback', ['as' => 'add
 $routes->post('/register', 'UserController::register');
 $routes->get('/logout', 'UserController::logout');
 $routes->get('/product-detail/(:any)', 'ProdukController::product_detail/$1', ['as' => 'product_detail']);
+$routes->get('service-detail/(:any)', 'ProdukController::service_detail/$1', ['as' => 'service_detail']);
 // API ALL LEVEL ROUTES
 $routes->get('/get-product-with-type', 'ProdukController::get_product_with_type');
 $routes->get('/get-services', 'ProdukController::get_services');

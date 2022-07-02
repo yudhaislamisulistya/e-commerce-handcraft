@@ -79,7 +79,6 @@
                                             <td><?= $value->deskripsi ?></td>
                                             <td>
                                                 <a href="<?= $value->slug ?>" style="padding: 10px; border-radius: 10px" class="btn-info">Detail</a>
-                                                <a href="<?= $value->slug ?>" style="padding: 10px; border-radius: 10px" class="btn-danger">Tambahkan</a>
                                             </td>
                                         </tr>
                                     <?php } ?>

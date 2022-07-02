@@ -40,6 +40,20 @@ class ProdukController extends BaseController
         }
     }
 
+    public function service_detail($slug = null){
+        try {
+            if($slug != null){
+                $data = $this->jasaModel->like('slug', $slug)->first();
+            }else{
+                return redirect()->to(base_url());
+            }
+
+            return view('service-detail', compact('data'));
+        } catch (\Exception $th) {
+            return redirect()->to(base_url());
+        }
+    }
+
     public function add_update_cart(){
         try {
             $data = $this->request->getVar();
