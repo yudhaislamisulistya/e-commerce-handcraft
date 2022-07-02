@@ -27,12 +27,9 @@
                 <div class="col-md-12">
                     <div class="card m-b-30">
                         <div class="card-body">
-
                             <h1 class="mt-0">Produk</h1>
-
                             <table id="datatable" class="table table-bordered dt-responsive nowrap"
                                 style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-
                                 <thead>
                                     <tr>
                                         <th>Gambar</th>
@@ -45,10 +42,41 @@
                                 <tbody>
                                     <?php foreach ($data as $key => $value) { ?>
                                         <tr>
-                                            <td><img style="border-radius: 20px" height="300" src="/https://dash.aprianimagfira.my.id/assets/img/produk/<?= $value->foto ?>" alt=""></td>
+                                            <td><img style="border-radius: 20px" height="300" src="https://dash.aprianimagfira.my.id/assets/img/produk/<?= $value->foto ?>" alt=""></td>
                                             <td><h4><?= $value->nama_produk ?></h4></td>
-                                            <td><?= get_jenis_produk($value->id_produk) ?></td>
+                                            <td><?= get_jenis_produk($value->id_jenis_produk) ?></td>
                                             <td>Rp. <?= format_rupiah($value->harga) ?></td>
+                                            <td>
+                                                <a href="<?= $value->slug ?>" style="padding: 10px; border-radius: 10px" class="btn-info">Detail</a>
+                                                <a href="<?= $value->slug ?>" style="padding: 10px; border-radius: 10px" class="btn-danger">Tambahkan</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+                <div class="col-md-12">
+                    <div class="card m-b-30">
+                        <div class="card-body">
+                            <h1 class="mt-0">Jasa</h1>
+                            <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
+                                    <tr>
+                                        <th>Gambar</th>
+                                        <th>Nama</th>
+                                        <th>Deskripsi</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($data_jasa as $key => $value) { ?>
+                                        <tr>
+                                            <td><img style="border-radius: 20px" height="300" src="https://dash.aprianimagfira.my.id/assets/img/jasa/<?= $value->foto ?>" alt=""></td>
+                                            <td><h4><?= $value->nama_jasa ?></h4></td>
+                                            <td><?= $value->deskripsi ?></td>
                                             <td>
                                                 <a href="<?= $value->slug ?>" style="padding: 10px; border-radius: 10px" class="btn-info">Detail</a>
                                                 <a href="<?= $value->slug ?>" style="padding: 10px; border-radius: 10px" class="btn-danger">Tambahkan</a>

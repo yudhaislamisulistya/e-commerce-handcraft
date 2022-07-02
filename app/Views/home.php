@@ -531,12 +531,12 @@
     $('#penyewaan-jasa-tab').click(function (e) { 
         e.preventDefault();
         $('#layanan-penyewaan-jasa').html('');
-        axios.get(HOST_URL + '/get-product-with-type/4')
+        axios.get(HOST_URL + '/get-services')
             .then(function (response){
                 data = response.data
                 console.log(data.row);
                 if(data.row == undefined){
-                    $('#layanan-penyewaan-jasa').append('<h2 style="text-align: center;">Produk Belum Tersedia...</h2>');
+                    $('#layanan-penyewaan-jasa').append('<h2 style="text-align: center;">Jasa Belum Tersedia...</h2>');
                 }
                 for (let index = 0; index < data.row; index++) {
                     $('#layanan-penyewaan-jasa').append(
@@ -546,7 +546,7 @@
                                 <div class="product-inner">
                                     <div class="product-image">
                                         <figure class="product-image--holder roundedn ">
-                                            <img src="https://dash.aprianimagfira.my.id/assets/img/produk/`+data.data[index].foto+`"
+                                            <img src="https://dash.aprianimagfira.my.id/assets/img/jasa/`+data.data[index].foto+`"
                                                 alt="Product">
                                         </figure>
                                         <a href="`+data.data[index].slug+`" class="product-overlay"></a>
@@ -557,11 +557,8 @@
                                         <div class="product-category">
                                             <a href="`+data.data[index].slug+`"></a>
                                         </div>
-                                        <h3 class="product-title"><a href="`+data.data[index].slug+`">`+data.data[index].nama_produk+`</a></h3>
+                                        <h3 class="product-title"><a href="`+data.data[index].slug+`">`+data.data[index].nama_jasa+`</a></h3>
                                         <div class="product-info-bottom">
-                                            <div class="product-price-wrapper">
-                                                <span class="money">`+formatRupiah(data.data[index].harga, 'Rp. ')+`</span>
-                                            </div>
                                             <a href="`+data.data[index].slug+`" class="add-to-cart pr--15">
                                                 <i class="la la-plus"></i>
                                                 <span>Tambahakan</span>

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\CartModel;
+use App\Models\JasaModel;
 use App\Models\ProdukModel;
 use CodeIgniter\API\ResponseTrait;
 
@@ -15,11 +16,13 @@ class ProdukController extends BaseController
     {
         $this->produkModel = new ProdukModel();
         $this->cartModel = new CartModel();
+        $this->jasaModel = new JasaModel();
     }
     public function index()
     {
         $data = $this->produkModel->get()->getResult();
-        return view('produk', compact('data'));
+        $data_jasa = $this->jasaModel->get()->getResult();
+        return view('produk', compact('data', 'data_jasa'));
     }
 
     public function product_detail($slug = null)
@@ -51,6 +54,32 @@ class ProdukController extends BaseController
             return redirect()->to(base_url($data['url']))->with('status', 'success');
         } catch (\Exception $th) {
             return redirect()->to(base_url($data['url']))->with('status', 'failed');
+        }
+    }
+
+    public function get_services(){
+        try {
+            $data = $this->jasaModel->get()->getResult();
+            if(!$data){
+                return $this->respond(
+                    [
+                        'code' => 404,
+                        'status' => 'failed', 
+                        'message' => 'Data tidak ditemukan'
+                    ]
+                );
+            }
+
+            return $this->respond(
+                [
+                    'row' => count($data),
+                    'code' => 200,
+                    'status' => 'success',
+                    'data' => $data
+                ]
+            );
+        } catch (\Exception $th) {
+            return $this->fail($th, 406);
         }
     }
 

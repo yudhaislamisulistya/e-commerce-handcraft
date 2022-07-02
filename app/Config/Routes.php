@@ -62,6 +62,7 @@ $routes->get('/logout', 'UserController::logout');
 $routes->get('/product-detail/(:any)', 'ProdukController::product_detail/$1', ['as' => 'product_detail']);
 // API ALL LEVEL ROUTES
 $routes->get('/get-product-with-type', 'ProdukController::get_product_with_type');
+$routes->get('/get-services', 'ProdukController::get_services');
 $routes->get('/get-product-with-type/(:any)', 'ProdukController::get_product_with_type/$1');
 $routes->get('/get-product-one-new', 'ProdukController::get_product_one_new');
 
