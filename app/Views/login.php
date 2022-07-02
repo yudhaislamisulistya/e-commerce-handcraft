@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 
 <!-- Breadcrumb area Start -->
-<section class="page-title-area bg-image ptb--80" data-bg-image="assets/img/penyandang_disabilitas.jpeg">
+<section class="page-title-area bg-image ptb--80" data-bg-image="assets/img/001.png">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">

@@ -20,8 +20,6 @@ class TransactionController extends BaseController
     }
     
     public function create_transaction(){
-
-
         try {
             $data = $this->request->getVar();
             

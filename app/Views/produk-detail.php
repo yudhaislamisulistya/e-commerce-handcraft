@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
         <!-- Breadcrumb area Start -->
-        <section class="page-title-area bg-image ptb--80" data-bg-image="../assets/img/penyandang_disabilitas.jpeg">
+        <section class="page-title-area bg-image ptb--80" data-bg-image="../assets/img/001.png">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
@@ -45,7 +45,7 @@
                                                 "asNavFor": ".nav-slider"
                                             }'>
                                                 <figure class="product-gallery__image zoom">
-                                                    <img style="border-radius: 10px" src="../https://dash.aprianimagfira.my.id/assets/img/produk/<?= $data['foto'] ?>" alt="Product">
+                                                    <img style="border-radius: 10px" src="https://dash.aprianimagfira.my.id/assets/img/produk/<?= $data['foto'] ?>" alt="Product">
                                                     <span class="product-badge sale">Sale</span>
                                                 </figure>
                                             </div>

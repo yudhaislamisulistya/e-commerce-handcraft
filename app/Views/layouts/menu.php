@@ -116,7 +116,7 @@
                                             </a>
                                         </li>
                                         <li class="mainmenu__item">
-                                            <a href="contact-us.html" class="mainmenu__link">
+                                            <a href="https://dash.aprianimagfira.my.id/" class="mainmenu__link">
                                                 <span class="mm-text">Merchant</span>
                                             </a>
                                         </li>
